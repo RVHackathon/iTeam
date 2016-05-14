@@ -1,5 +1,6 @@
 <%= simple_form_for @project do |f| %>
   <%= f.input :title, label:'Project title' %>
   <%= f.input :description, label:'Description of project' %>
+  <%= f.collection_select :category_id, Developer.all, :id, :name, {promt: 'Choose category of developer'}, class: "btn-custom" %>
   <%= f.button :submit %>
 <% end%>

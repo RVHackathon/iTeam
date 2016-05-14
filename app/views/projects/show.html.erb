@@ -3,6 +3,7 @@
     <h1><%= @project.title %></h1>
     <p class='message-posted-by'>Posted by <%= @project.user.email %> <%= time_ago_in_words(@project.created_at) %> ago</p>
     <p class='message-desc'><%= @project.description %></p>
+    <p class='message-desc'>We need: <%= @project.category_id %></p>
 
     <h3 class="reply-to-msg">Reply to project</h3>
     <h3>Comments:</h3>
@@ -18,4 +19,4 @@
       <% end %>
     </div>
   </div>
-</div>
+</div
