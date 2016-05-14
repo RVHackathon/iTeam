@@ -1,0 +1,8 @@
+<% @projects.each do |project| %>
+  <div class="col-md-4">
+    <div class="message">
+      <div class="message-title"><%= project.title %></div>
+      <%= link_to "View about project", project_path(project), class: "btn-custom" %>
+    </div>
+  </div>
+<% end %>

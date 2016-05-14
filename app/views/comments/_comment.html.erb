@@ -1,0 +1,14 @@
+<div class='comment'>
+  <p class='comment-content'><%= comment.content %></p>
+  <p class='comment-posted-by'>Posted by <%= comment.user.email %> <%= time_ago_in_words(comment.created_at) %> ago </p>
+  <div class='links'>
+    <% if user_signed_in? %>
+      <% if comment.user.id == current_user.id %>
+        <%= link_to 'Edit', edit_project_comment_path(comment.project, comment) %>
+        <%= link_to 'Delete', project_comment_path(comment.project, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <!-- comment.project - corresponds to the project that the comments are for
+             comment - represents the individual comment -->
+      <% end %>
+    <% end %>
+  </div>
+</div>
