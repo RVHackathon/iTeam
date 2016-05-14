@@ -3,7 +3,11 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @projects = Project.all.order("created_at DESC")
+    if params[:developer].blank?
+      @projects = Project.all.order("created_at DESC")
+    else
+      @projects = Project.where(category_id: params[:developer]).order('created_at DESC')
+    end
   end
 
   def show

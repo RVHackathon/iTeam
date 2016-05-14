@@ -1,0 +1,3 @@
+<% Developer.all.each do |developer| %>
+  <%= link_to developer.name, projects_path(developer: developer) %>
+<% end %>
