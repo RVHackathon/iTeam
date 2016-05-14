@@ -1,3 +1,16 @@
-<% Developer.all.each do |developer| %>
-  <%= link_to developer.name, projects_path(developer: developer) %>
-<% end %>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+
+    <ol class="navbar-default">
+      <center>
+        <h4>
+        <li>
+          <% Developer.all.each do |developer| %>
+            <%= link_to developer.name, projects_path(developer: developer) %>
+          <% end %>
+        </li>
+      </h4>
+    </center>
+    </ol>
+
+</nav>

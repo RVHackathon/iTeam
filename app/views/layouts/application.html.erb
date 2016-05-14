@@ -5,44 +5,65 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style>
+   body {
+    background-image: url(/images/bg.jpg); /* Путь к фоновому изображению */
+    background-attachment: fixed;
+   }
+  </style>
 </head>
 <body>
-  <div class="navbar navbar-default">
+  <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <%= link_to 'iTeam', root_path, class: 'navbar-brand' %>
       </div>
+
       <ul class='nav navbar-nav'>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
         <li>
           <%= link_to 'About', root_path %>
         </li>
         <li>
           <% if user_signed_in? %>
-            <%= link_to current_user.email %>
+          <%= link_to 'Add project to board', new_project_path %>
+          <% end %>
+        <li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to current_user.email, class: 'navbar-right navbar-text navbar-link'%>
+            <li>
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+            </li>
           <% else %>
             <%= link_to 'Sign Up', new_user_registration_path %>
           <% end %>
         </li>
         <% if user_signed_in? %>
-          <li>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-          </li>
         <% else %>
           <li>
             <%= link_to 'Log In', new_user_session_path %>
           </li>
         <% end %>
       </ul>
-      <% if user_signed_in? %>
-        <%= link_to 'New project', new_project_path, class: 'navbar-right navbar-text navbar-link' %>
-      <% end %>
     </div>
   </div>
+  <br>
+  <br>
   <%= render 'projects/projects_category' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <div class="container">
     <%= yield %>
   </div>
+  <br>
+  <br>
+  <br>
 </body>
 </html>
