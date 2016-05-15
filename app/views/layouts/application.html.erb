@@ -25,7 +25,9 @@
       <ul class='nav navbar-nav'>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <%= form_tag(projects_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], title: "Search Projects" %>
+            <% end %>
           </div>
         </form>
         <li>
