@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+
+section {
+  height: 100vh;
+  background-color: #666;
+  position: relative;
+}
+
+.sect_1 {
+  background-image: url(/images/paralax.jpg);
+  background-size: cover;
+}
+
+.header_text {
+  color: #2980B9;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  top: 50%;
+}

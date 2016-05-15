@@ -1,13 +1,15 @@
 <div class="col-md-8 col-md-offset-2">
   <div class='message-show'>
-    <h1><%= @project.title %></h1>
-    <p class='message-posted-by'>Posted by <%= @project.user.email %> <%= time_ago_in_words(@project.created_at) %> ago</p>
-    <p class='message-desc'><%= @project.description %></p>
-    <p class='message-desc'>We need: <%= @category.name %></p>
+    <center>
+      <h1><%= @project.title %></h1>
+      <p class='message-posted-by'>Posted by <%= @project.user.email %> <%= time_ago_in_words(@project.created_at) %> ago</p>
+      <p class='message-desc'><%= @project.description %></p>
+    </center>
+    <p class='message-desc'>We need: <%= @category.name %> developer</p>
 
-    <p>Comments:</p>
-    <%= render @project.comments %>
-    <%= render 'comments/form' %>
+      <p>Comments:</p>
+      <%= render @project.comments %>
+      <%= render 'comments/form' %>
 
     <div class='links btn-group'>
       <% if user_signed_in? %>

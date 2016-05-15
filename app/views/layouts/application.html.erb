@@ -5,10 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheets" href="/assets/stylesheets/paralax.css" />
+  <script src="/assets/javascripts/paralax.js"></script>
   <style>
    body {
     background-image: url(/images/bg.jpg); /* Путь к фоновому изображению */
     background-attachment: fixed;
+    background-size: 100%;
    }
   </style>
 </head>
@@ -26,7 +29,7 @@
           </div>
         </form>
         <li>
-          <%= link_to 'About', root_path %>
+          <%= link_to 'About', about_show_path %>
         </li>
         <li>
           <% if user_signed_in? %>
