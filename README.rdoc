@@ -1,5 +1,10 @@
+=================
+Project for Kreative hackathon
+#kreative_hackathon
+
 source 'https://rubygems.org'
 
 gem 'simple_form' https://github.com/twbs/bootstrap-sass
 
 gem 'bootstrap-sass' https://github.com/plataformatec/simple_form
+
